@@ -1,0 +1,256 @@
+/* Compiled CSS (from SCSS) - simplified for demo */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Poppins, sans-serif;
+  color: #222;
+  background: #f2f2f2;
+  margin: 0;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.visually-hidden {
+  position: absolute;
+  left: -9999px;
+}
+
+.header {
+  position: relative;
+  height: 420px;
+  background: linear-gradient(135deg, #4dc6ff, #6b6bff);
+  color: #fff;
+  overflow: hidden;
+}
+
+.header__slider {
+  height: 100%;
+  position: relative;
+}
+
+.header__slide {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity .8s;
+}
+
+.header__slide--active {
+  opacity: 1;
+}
+
+.header__overlay {
+  position: absolute;
+  inset: 0;
+  opacity: .15;
+  mix-blend-mode: overlay;
+  background-image: url('../assets/hero-pattern.svg');
+}
+
+.header__content {
+  position: relative;
+  text-align: center;
+}
+
+.header__title {
+  font-size: 48px;
+  letter-spacing: 4px;
+  margin-bottom: 10px;
+}
+
+.header__subtitle {
+  opacity: .9;
+}
+
+.header__arrow {
+  position: absolute;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, .12);
+  border: 0;
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 28px;
+  cursor: pointer;
+}
+
+.header__arrow:hover,
+.header__arrow:focus {
+  transform: translateX(-50%) scale(1.05);
+  outline: 2px solid rgba(255, 255, 255, .25);
+}
+
+.nav {
+  position: absolute;
+  top: 14px;
+  right: 20px;
+}
+
+.nav__list {
+  display: flex;
+  gap: 14px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav__link {
+  color: rgba(255, 255, 255, .9);
+  text-decoration: none;
+  padding: 8px 10px;
+  border-radius: 6px;
+}
+
+.nav__link:hover,
+.nav__link:focus {
+  background: rgba(255, 255, 255, 0.08);
+  outline: 2px solid rgba(255, 255, 255, 0.12);
+}
+
+.section {
+  background: #fff;
+  padding: 60px 0;
+  margin-bottom: 20px;
+}
+
+.section__title {
+  text-align: center;
+  letter-spacing: 2px;
+  color: #222;
+  margin-bottom: 30px;
+}
+
+.projects {
+  padding: 100px 0;
+  position: relative;
+}
+
+/* Header */
+.projects .section-header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.projects .section-header hr {
+  width: 60px;
+  border: none;
+  height: 2px;
+  background: #d6d6d6;
+  margin: 0 auto 20px;
+}
+
+.projects .section-header h2 {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #223a67;
+}
+
+/* Project wrapper */
+.projects .project {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  margin-bottom: 150px;
+  position: relative;
+}
+
+/* Right version */
+.projects .project--right {
+  flex-direction: row-reverse;
+}
+
+/* Image */
+.projects .project__image {
+  width: 45%;
+}
+
+.projects .project__image img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  display: block;
+}
+
+/* Content */
+.projects .project__content {
+  width: 45%;
+  color: #223a67;
+}
+
+.projects .project__subtitle {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #9aaacb;
+}
+
+.projects .project__title {
+  font-size: 30px;
+  margin: 5px 0 15px;
+  color: #223a67;
+  font-weight: 700;
+}
+
+.projects .project__text {
+  font-size: 15px;
+  color: #7082a1;
+  margin-bottom: 25px;
+  line-height: 1.6;
+}
+
+/* Button */
+.projects .btn {
+  display: inline-block;
+  padding: 12px 28px;
+  font-size: 12px;
+  border: 1px solid #5578ff;
+  color: #5578ff;
+  border-radius: 3px;
+  text-decoration: none;
+  margin-bottom: 20px;
+}
+
+/* Location */
+.projects .project__location {
+  font-size: 13px;
+  color: #7c8cac;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.projects .project__location img {
+  width: 12px;
+  height: auto;
+}
+
+/* Background blocks */
+.projects .bg-block {
+  position: absolute;
+  z-index: -1;
+  width: 300px;
+  height: 200px;
+  top: -40px;
+  background: linear-gradient(90deg, #4fa3ff, #7f58ff);
+  border-radius: 3px;
+}
+
+.projects .bg-block--left {
+  left: -80px;
+}
+
+.projects .bg-block--right {
+  right: -80px;
+  background: linear-gradient(90deg, #6b2fff, #4fa3ff);
+}
