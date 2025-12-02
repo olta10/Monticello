@@ -5,7 +5,6 @@
 body {
   font-family: Poppins, sans-serif;
   color: #222;
-  background: #f2f2f2;
   margin: 0;
 }
 
@@ -15,19 +14,63 @@ body {
   padding: 40px 20px;
 }
 
-.visually-hidden {
-  position: absolute;
-  left: -9999px;
-}
-
 .header {
   position: relative;
-  height: 420px;
-  background: linear-gradient(135deg, #4dc6ff, #6b6bff);
+  height: 600px;
+  background-image: url("../images/backgroundheader.svg"); 
   color: #fff;
   overflow: hidden;
 }
 
+.header__top {
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  gap: 100px; 
+  padding: 20px 0;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+/* Logo majtas */
+.header__logo img {
+  height: 60px;
+}
+
+/* Menu në mes */
+.nav__list {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav__link {
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 10px;
+  border-radius: 6px;
+}
+
+.nav__link:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* Ikonat sociale djathtas */
+.header__social {
+  display: flex;
+  gap: 15px;
+}
+
+.header__social img {
+  width: 25px;
+  height: 25px;
+}
+
+/* Slider poshtë */
 .header__slider {
   height: 100%;
   position: relative;
@@ -47,14 +90,6 @@ body {
   opacity: 1;
 }
 
-.header__overlay {
-  position: absolute;
-  inset: 0;
-  opacity: .15;
-  mix-blend-mode: overlay;
-  background-image: url('../assets/hero-pattern.svg');
-}
-
 .header__content {
   position: relative;
   text-align: center;
@@ -70,6 +105,7 @@ body {
   opacity: .9;
 }
 
+/* Arrow poshtë slider */
 .header__arrow {
   position: absolute;
   bottom: 18px;
@@ -89,32 +125,6 @@ body {
   outline: 2px solid rgba(255, 255, 255, .25);
 }
 
-.nav {
-  position: absolute;
-  top: 14px;
-  right: 20px;
-}
-
-.nav__list {
-  display: flex;
-  gap: 14px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.nav__link {
-  color: rgba(255, 255, 255, .9);
-  text-decoration: none;
-  padding: 8px 10px;
-  border-radius: 6px;
-}
-
-.nav__link:hover,
-.nav__link:focus {
-  background: rgba(255, 255, 255, 0.08);
-  outline: 2px solid rgba(255, 255, 255, 0.12);
-}
 
 .section {
   background: #fff;
@@ -247,9 +257,22 @@ body {
 }
 
 .news {
-  background: linear-gradient(180deg, #6bbcff, #6b6bff);
-  color: #fff;
   padding: 80px 0;
+  color: #fff;
+  position: relative;
+  background-image: url("../images/news.svg"); 
+  background-size: cover; 
+  background-position: center;
+  background-repeat: no-repeat;
+  isolation: isolate;
+}
+
+.news::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: -1;
 }
 
 .news__slider {
@@ -321,8 +344,171 @@ body {
   transform: translateY(-50%) scale(1.12);
 }
 
+/* Titulli */
+.news__title {
+  font-size: 16px;
+  margin: 10px 0 6px;
+}
+
+/* Meta */
+.news__meta {
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+/* Buttons left/right */
+.news__prev,
+.news__next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: 0;
+  font-size: 24px;
+  color: #fff;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.news__prev { left: -30px; }
+.news__next { right: -30px; }
+
+.news__prev:hover,
+.news__next:hover {
+  transform: translateY(-50%) scale(1.12);
+}
+
+.gallery__grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr; 
+  grid-template-rows: repeat(2, 200px); 
+  gap: 10px;
+}
+
+/* Fotoja e parë → kolona e madhe majtas, mbulon dy rreshta */
+.gallery__grid img:first-child {
+  grid-column: 1 / 2;
+  grid-row: 1 / 3;
+}
+
+.gallery__grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.gallery__more .btn {
+  display: inline-block;
+  padding: 12px 32px;
+  color: #222;
+  border: 1px solid #b5b5b5;    
+  text-decoration: none;
+  font-size: 13px;
+  letter-spacing: 1px;
+  transition: 0.25s;
+}
+
+.gallery__more .btn:hover {
+  background: #f2f2f2; 
+  border-color: #888;
+}
+
+.gallery__more {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;      
+}
+
+/*  CONTACT SECTION= */
+.section.contact {
+  padding: 80px 0;
+  position: relative;
+  background: #f5f5f5;
+}
+
+.contact__wrap {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.section__title {
+  text-align: center;
+  color: #1f2a44;
+  font-size: 28px;
+  letter-spacing: 1px;
+  margin-bottom: 35px;
+}
+
+.contact__inner {
+  background: #fff;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 30px;
+  padding: 40px;
+  border-radius: 4px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+  position: relative;
+  z-index: 10;
+}
+
+/* FORM */
+.contact__form {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.contact__form input,
+.contact__form textarea {
+  width: 100%;
+  padding: 12px 0;
+  border: none;
+  border-bottom: 1px solid #b9bcc7;
+  outline: none;
+  font-size: 15px;
+  font-weight: 300;
+  color: #1a1a1a;
+  background: transparent;
+}
+
+.contact__form input::placeholder,
+.contact__form textarea::placeholder {
+  color: #9aa0b2;
+  font-size: 14px;
+}
+
+.btn.btn--primary {
+  width: 130px;
+  padding: 10px 0;
+  border: 1px solid #2f3a56;
+  background: transparent;
+  color: #2f3a56;
+  cursor: pointer;
+  font-size: 14px;
+  letter-spacing: 1px;
+  transition: 0.3s;
+  margin-top: 10px;
+}
+
+.btn.btn--primary:hover {
+  background: #2f3a56;
+  color: #fff;
+}
+
+/* MAP */
+.contact__map {
+  width: 50%;
+  height: 320px;
+  border-radius: 4px;
+  background: #dcdcdc;
+  overflow: hidden;
+}
+
+
 .footer {
-  background: linear-gradient(180deg, #6a8dff, #8e4dff);
+  background-image: url("../images/backgroundheader.svg");
   padding: 100px 0 60px;
   color: #fff;
 }

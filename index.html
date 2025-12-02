@@ -4,124 +4,139 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Monticello — Simple & Modern</title>
-  <link rel="icon" href="assets/favicon.png" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
+  <link rel="icon" href="images/logofooter.svg" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/main.css">
+
   <link href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css" rel="stylesheet" />
-  
-  <link rel="icon" href="assets/favicon.png" />
 </head>
+
 <body class="monticello">
 
+  <!-- ======================= HEADER ======================= -->
+  <header class="header" id="home">
+    <div class="header__top">
+      <div class="header__logo">
+        <img src="./images/logofooter.svg" alt="Logo">
+      </div>
 
-<header class="header" id="home">
-  <div class="header__slider">
-    <div class="header__slide header__slide--active" data-slide="0">
-      <div class="container header__content">
-        <h1 class="header__title">SIMPLE & MODERN</h1>
-        <p class="header__subtitle">We make the world beautiful everyday</p>
+      <nav class="nav">
+        <ul class="nav__list">
+          <li class="nav__item"><a href="#home" class="nav__link">ABOUT US</a></li>
+          <li class="nav__item"><a href="#projects" class="nav__link">PROJECTS</a></li>
+          <li class="nav__item"><a href="#news" class="nav__link">NEWS</a></li>
+        </ul>
+      </nav>
+
+      <div class="header__social">
+        <a href="https://facebook.com" class="social"><img src="./images/facebook.svg" alt=""></a>
+        <a href="https://twitter.com" class="social"><img src="./images/twitter.svg" alt=""></a>
+        <a href="https://instagram.com" class="social"><img src="./images/instagram.svg" alt=""></a>
       </div>
     </div>
 
-    <div class="header__slide" data-slide="1">
-      <div class="container header__content">
-        <h1 class="header__title">CREATIVE BUILDINGS</h1>
-        <p class="header__subtitle">Design driven by functionality</p>
+    <div class="header__slider">
+      <div class="header__slide header__slide--active" data-slide="0">
+        <div class="container header__content">
+          <h1 class="header__title">SIMPLE & MODERN</h1>
+          <p class="header__subtitle">We make the world beautiful everyday</p>
+        </div>
+      </div>
+
+      <div class="header__slide" data-slide="1">
+        <div class="container header__content">
+          <h1 class="header__title">CREATIVE BUILDINGS</h1>
+          <p class="header__subtitle">Design driven by functionality</p>
+        </div>
       </div>
     </div>
-  </div>
 
-  <nav class="nav">
-    <ul class="nav__list">
-      <li class="nav__item"><a href="#home" class="nav__link">ABOUT US</a></li>
-      <li class="nav__item"><a href="#projects" class="nav__link">PROJECTS</a></li>
-      <li class="nav__item"><a href="#news" class="nav__link">NEWS</a></li>
-      <li class="nav__item"><a href="#gallery" class="nav__link">GALLERY</a></li>
-      <li class="nav__item"><a href="#contact" class="nav__link">CONTACT</a></li>
-    </ul>
-  </nav>
+    <button class="header__arrow">↓</button>
+  </header>
 
-  <button class="header__arrow">↓</button>
-</header>
-
-
+  <!-- ======================= MAIN ======================= -->
   <main>
-    
-<section id="projects" class="projects">
-  <div class="container">
-    <div class="section-header">
-      <hr>
-      <h2>WHAT WE DO</h2>
-    </div>
 
-    <!-- PROJECT 1 -->
-    <div class="project project--left">
-      <div class="project__image">
-        <img src="./images/pr1.svg" alt="">
+    <!-- PROJECTS -->
+    <section id="projects" class="projects">
+      <div class="container">
+
+        <div class="section-header">
+          <hr>
+          <h2>WHAT WE DO</h2>
+        </div>
+
+        <!-- Project 1 -->
+        <div class="project project--left">
+          <div class="project__image">
+            <img src="./images/pr1.svg" alt="">
+          </div>
+
+          <div class="project__content">
+            <span class="project__subtitle">ONE WORLD</span>
+            <h3 class="project__title">TRADE CENTER</h3>
+            <p class="project__text">
+              Increasing prosperity in our lives can be accomplished by having the right frame of mind.
+            </p>
+            <a href="#" class="btn">MORE DETAILS</a>
+
+            <p class="project__location">
+              <img src="#" alt="">
+              New York City, United States · 1776 feet
+            </p>
+          </div>
+
+          <div class="bg-block bg-block--left"></div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project project--right">
+          <div class="project__image">
+            <img src="./images/pr2.svg" alt="">
+          </div>
+
+          <div class="project__content">
+            <span class="project__subtitle">INTERNATIONAL</span>
+            <h3 class="project__title">COMMERCE CENTRE</h3>
+            <p class="project__text">
+              Successful businesses have many things in common...
+            </p>
+            <a href="#" class="btn">MORE DETAILS</a>
+
+            <p class="project__location">
+              <img src="assets/location.svg" alt="">
+              Hong Kong · 1588 feet
+            </p>
+          </div>
+
+          <div class="bg-block bg-block--right"></div>
+        </div>
+
       </div>
+    </section>
 
-      <div class="project__content">
-        <span class="project__subtitle">ONE WORLD</span>
-        <h3 class="project__title">TRADE CENTER</h3>
-        <p class="project__text">
-          Increasing prosperity in our lives can be accomplished by having the right frame of mind.
-        </p>
-
-        <a href="#" class="btn">MORE DETAILS</a>
-
-        <p class="project__location">
-          <img src="#" alt="">
-          New York City, United States · 1776 feet
-        </p>
-      </div>
-
-      <div class="bg-block bg-block--left"></div>
-    </div>
-
-    <!-- PROJECT 2 -->
-    <div class="project project--right">
-      <div class="project__image">
-        <img src="./images/pr2.svg" alt="">
-      </div>
-
-      <div class="project__content">
-        <span class="project__subtitle">INTERNATIONAL</span>
-        <h3 class="project__title">COMMERCE CENTRE</h3>
-        <p class="project__text">
-          Successful businesses have many things in common, today we’ll look at the big “R”
-          of recognition and how a digital advertising network may help.
-        </p>
-
-        <a href="#" class="btn">MORE DETAILS</a>
-
-        <p class="project__location">
-          <img src="assets/location.svg" alt="">
-          Hong Kong · 1588 feet
-        </p>
-      </div>
-
-      <div class="bg-block bg-block--right"></div>
-    </div>
-  </div>
-</section>
-
+    <!-- NEWS -->
     <section id="news" class="section news">
       <div class="container">
         <h2 class="section__title">LATEST NEWS</h2>
+
         <div class="news__slider" id="newsSlider" aria-roledescription="carousel">
           <div class="news__viewport">
             <div class="news__track">
+
               <article class="news__card">
                 <img src="./images/news1.svg" alt="">
                 <h4 class="news__title">See the unmatched beauty</h4>
                 <p class="news__meta">ALAN BRUN — 20 May 2025</p>
               </article>
+
               <article class="news__card">
                 <img src="images/news2.svg" alt="">
                 <h4 class="news__title">Effective advertising pointers</h4>
                 <p class="news__meta">DOMINIC FREEMAN — 15 May 2025</p>
               </article>
+
               <article class="news__card">
                 <img src="images/news3.svg" alt="">
                 <h4 class="news__title">Hypnotize yourself into the ghost</h4>
@@ -130,32 +145,67 @@
 
             </div>
           </div>
-          <button class="news__prev" aria-label="Previous news">‹</button>
-          <button class="news__next" aria-label="Next news">›</button>
+
+          <button class="news__prev">‹</button>
+          <button class="news__next">›</button>
         </div>
       </div>
     </section>
 
-     <footer class="footer">
-    <div class="container footer__inner">
-      <div class="footer__brand">
-        <img src="images/logofooter.svg" alt="Monticello logo">
-        <p>&copy; Monticello 2025</p>
-      </div>
-        <div class="footer__social">
-          <a href="https://facebook.com" class="social">
-            <img src="./images/facebook.svg" alt="Facebook">
-          </a>
-          <a href="https://twitter.com" class="social">
-            <img src="./images/twitter.svg" alt="Twitter">
-          </a>
-          <a href="https://instagram.com" class="social">
-            <img src="./images/instagram.svg" alt="Instagram">
-          </a>
-        </div>
-    </div>
-  </footer>
+    <!-- GALLERY -->
+    <section id="gallery" class="section gallery">
+      <div class="container">
+        <h2 class="section__title gallery-title">GALLERY</h2>
 
-</main>
-</body> 
+        <div class="gallery__grid">
+          <img src="images/gallery1.svg" alt="">
+          <img src="images/gallery2.svg" alt="">
+          <img src="images/gallery3.svg" alt="">
+          <img src="images/gallery4.svg" alt="">
+          <img src="images/gallery5.svg" alt="">
+        </div>
+
+        <div class="gallery__more">
+          <a class="btn" href="#">SEE MORE</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section contact">
+      <div class="container contact__wrap">
+        <h2 class="section__title">GET IN TOUCH</h2>
+
+        <div class="contact__inner">
+
+          <form id="contactForm" class="contact__form" novalidate>
+            <input id="name" name="name" placeholder="Your name" required>
+            <input id="email" name="email" placeholder="Email" type="email" required>
+            <textarea id="message" name="message" rows="4" placeholder="Message" required></textarea>
+            <button class="btn btn--primary" type="submit">SUBMIT</button>
+          </form>
+
+          <div class="contact__map" id="map"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container footer__inner">
+        <div class="footer__brand">
+          <img src="images/logofooter.svg" alt="">
+          <p>&copy; Monticello 2025</p>
+        </div>
+
+        <div class="footer__social">
+          <a href="#"><img src="./images/facebook.svg" alt=""></a>
+          <a href="#"><img src="./images/twitter.svg" alt=""></a>
+          <a href="#"><img src="./images/instagram.svg" alt=""></a>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+</body>
 </html>
