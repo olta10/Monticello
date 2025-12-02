@@ -1,4 +1,4 @@
-// HEADER SLIDER
+// ================= HEADER SLIDER =================
 const headerSlides = document.querySelectorAll('.header__slide');
 const headerArrow = document.querySelector('.header__arrow');
 let currentHeaderSlide = 0;
@@ -12,9 +12,7 @@ headerArrow.addEventListener('click', () => {
   currentHeaderSlide = (currentHeaderSlide + 1) % headerSlides.length;
   showHeaderSlide(currentHeaderSlide);
 
-  if(currentHeaderSlide === 1){
-    document.querySelector('#projects').scrollIntoView({behavior: 'smooth'});
-  }
+  document.querySelector('#projects').scrollIntoView({behavior: 'smooth'});
 });
 
 setInterval(() => {
@@ -23,40 +21,53 @@ setInterval(() => {
 }, 4000);
 
 
-// NEWS SLIDER
+// ================= NEWS SLIDER =================
 const newsTrack = document.querySelector('.news__track');
 const newsCards = document.querySelectorAll('.news__card');
 const newsPrev = document.querySelector('.news__prev');
 const newsNext = document.querySelector('.news__next');
-const cardWidth = newsCards[0].offsetWidth + 20; // 20 = gap
-let newsIndex = 0;
 
-function updateNewsSlider() {
-  newsTrack.style.transform = `translateX(-${newsIndex * cardWidth}px)`;
+let newsIndex = 0;
+let visibleCards = 3; 
+
+function cardWidth() {
+  const style = window.getComputedStyle(newsCards[0]);
+  const marginRight = parseInt(style.marginRight) || 20;
+  return newsCards[0].offsetWidth + marginRight;
 }
 
+// Update pozicionin e track
+function updateNewsSlider() {
+  newsTrack.style.transform = `translateX(-${newsIndex * cardWidth()}px)`;
+}
+
+// Next button
 newsNext.addEventListener('click', () => {
-  if(newsIndex < newsCards.length - 3){ // show 3 cards at a time
+  if(newsIndex < newsCards.length - visibleCards) {
     newsIndex++;
-    updateNewsSlider();
+  } else {
+    newsIndex = 0;
   }
+  updateNewsSlider();
 });
 
 newsPrev.addEventListener('click', () => {
   if(newsIndex > 0){
     newsIndex--;
-    updateNewsSlider();
+  } else {
+    newsIndex = newsCards.length - visibleCards;
   }
+  updateNewsSlider();
 });
 
-// Auto scroll every 4 seconds
 setInterval(() => {
   newsIndex++;
-  if(newsIndex > newsCards.length - 3) newsIndex = 0;
+  if(newsIndex > newsCards.length - visibleCards) newsIndex = 0;
   updateNewsSlider();
 }, 4000);
 
 
+// ================= SMOOTH NAVIGATION =================
 document.querySelectorAll('.nav__link').forEach(link => {
   link.addEventListener('click', e => {
     e.preventDefault();

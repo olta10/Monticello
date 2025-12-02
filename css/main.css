@@ -277,15 +277,16 @@ body {
   margin: 0 auto;
 }
 
-.news__track {
-  display: flex;
-  gap: 20px;  
-  transition: transform .6s ease;
-}
-
 .news__viewport {
   overflow: hidden;
 }
+
+.news__track {
+  display: flex;
+  gap: 20px; /* duhet të përputhet me JS */
+  transition: transform 0.5s ease;
+}
+
 
 .news__card {
   min-width: 250px;
